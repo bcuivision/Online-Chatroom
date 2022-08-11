@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Online Chatroom</title>
+
+      <!-- jQuery Modal -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+      <link rel="stylesheet" href="/Front End/styles.css"></link>
+   </head>
+
+   <body>
+
+      <button id="loginBtn" onclick="openLogin()">LOGIN</button>
+      <button id="logoutBtn" onclick="logOut()">LOGOUT</button>
+
+      <!-- create chat room with self determined name -->
+      <button id="createBtn" onclick="openChat()">CREATE</button>
+
+      <!-- display all live chat rooms -->
+      <div id="chatrooms"></div>
+
+      <div id="currentUser">USER STATUS: no logged in user</div>
+
+      <form id = "loginform" class="modal">
+         <label>Username:</label>
+         <input id="username" type="text" placeholder="Username">
+         <button type="button" id="submitLoginBtn" onclick="submitLogin()">LOGIN</button>
+         <a href="#" rel="modal:close" class="close-modal ">Close</a>
+     </form> 
+
+      <form id = "openChatForm" class="modal" >
+         <label>Room Name:</label>
+         <input id="roomname" type="text" placeholder="roomname">
+
+         <input type="radio" id="private" name="chatType" value="private" onclick="openPasswordPrompt()">
+         <label for="private">Private</label>
+         <input type="radio" id="public" name="chatType" value="public" onclick="closePasswordPrompt()">
+         <label for="private">Public</label>
+         
+         <br>
+         <br>
+
+         <div id="passwordPrompt">
+            <label>Password:</label>
+            <input id="roomPassword" type="password" placeholder="Password">
+         </div> 
+
+         <button type="button" id="createChatBtn" onclick="submitChat()">CREATE</button>
+
+         <a href="#" rel="modal:close" class="close-modal ">Close</a>
+     </form> 
+
+      <!-- chat display all users in the room -->
+
+      <!-- live chat -->
+      <div id="liveChat" class="modal">
+         <div id="chatname">CHATNAME</div>
+         <button id="leaveBtn" onclick="leaveChat()">LEAVE</button>
+         <div id="chatCreator"></div>
+         
+         <div id="adminActions">
+            <label for="selectUser">Choose a user for action:</label>
+            <select name="users" id="selectUser">
+            </select>
+            <button id="kickBtn" onclick="kickUser()">KICK</button>
+            <button id="banBtn" onclick="banUser()">BAN</button>
+            <button id="dmBtn" onclick="dmUser()">Private Message</button>
+            <button id="addAdminBtn" onclick="addAdmin()">Set Admin</button>
+            <button id="removeAdminBtn" onclick="removeAdmin()">Remove Admin</button>
+         </div>
+
+         <h3>Current Chat Members:</h3>
+         <ul id="chatUserList"></ul>
+         <span id="chatUser">username</span>
+         <input type="text" id="message_input"/>
+         <button onclick="sendMessage()">SEND</button>
+         <div id="chatlog"></div>
+      </div>
+
+      <div id="background"></div>
+
+      <footer>
+         <script src="/Front End/interface.js"></script>
+      </footer>
+   </body>
+</html>

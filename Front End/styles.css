@@ -1,0 +1,106 @@
+#currentUser
+{
+position: absolute;
+right: 10px;
+top: 10px;
+font-weight: 900;
+}
+
+#chatrooms
+{
+margin-top: 50px;
+width: 100%;
+display: grid;
+grid-template-columns: auto auto auto;
+z-index: -99;
+}
+
+.room
+{
+height: 100px;
+border: 1px black solid;
+position: relative;
+background-color: rgb(220, 220, 220);
+border-radius: 5px;
+}
+
+.joinBtn
+{
+position: absolute;
+right: 5px;
+bottom: 5px;
+}
+
+.deleteBtn
+{
+position: absolute;
+right: 5px;
+top: 5px;
+}
+
+.roomname
+{
+position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.roomowner
+{
+position: absolute;
+top: 5px;
+left: 5px;
+}
+
+.messages
+{
+border: 1px green solid;
+}
+
+.messages span
+{
+font-weight: 900;
+font-style: italic;
+color: rgb(176, 176, 176);
+}
+
+#liveChat
+{
+padding: 10px;
+border: 1px solid black;
+
+position: absolute;
+top: 50%;
+left:50%;
+transform: translate(-50%,-50%);
+}
+
+#chatname
+{
+text-align: center;
+font-size: 24pt;
+font-weight: 900;
+}
+
+#passwordPrompt
+{
+display:none;
+}
+
+#background
+{
+position: absolute;
+top: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.614);
+}
+
+#leaveBtn
+{
+position: absolute;
+top: 5px;
+right: 5px;
+background-color: rgb(255, 210, 210);
+}
